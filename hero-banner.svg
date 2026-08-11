@@ -1,0 +1,86 @@
+<svg width="900" height="230" viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A120B"/>
+      <stop offset="55%" stop-color="#20160C"/>
+      <stop offset="100%" stop-color="#150F0B"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F1C36B"/>
+      <stop offset="100%" stop-color="#E2711D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2711D" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#E2711D" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="typeClip">
+      <rect id="clipRect" x="0" y="0" width="0" height="40">
+        <animate attributeName="width" from="0" to="430" dur="2.2s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/>
+      </rect>
+    </clipPath>
+    <style>
+      .mono{font-family:'Courier New',monospace;}
+      .sans{font-family:'Trebuchet MS',Verdana,sans-serif;}
+      .particle{animation:rise 5.5s linear infinite;}
+      @keyframes rise{
+        0%{transform:translateY(0) rotate(0deg); opacity:0;}
+        10%{opacity:0.85;}
+        85%{opacity:0.55;}
+        100%{transform:translateY(-150px) rotate(12deg); opacity:0;}
+      }
+      .steam{animation:wisp 3.4s ease-in-out infinite;}
+      @keyframes wisp{
+        0%{transform:translateY(0) scale(1); opacity:0;}
+        20%{opacity:0.5;}
+        70%{opacity:0.25;}
+        100%{transform:translateY(-46px) scale(1.5); opacity:0;}
+      }
+      .fadeUp{animation:fadeUp 1s ease forwards; opacity:0;}
+      @keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+      .cursor{animation:blink 1s steps(1) infinite;}
+      @keyframes blink{50%{opacity:0;}}
+    </style>
+  </defs>
+
+  <rect width="900" height="230" rx="18" fill="url(#bg)"/>
+  <rect width="900" height="230" rx="18" fill="url(#glow)"/>
+
+  <!-- floating code particles -->
+  <g class="mono" fill="#E8A93A" font-size="16" opacity="0.7">
+    <text class="particle" x="60" y="200" style="animation-delay:0s">&lt;/&gt;</text>
+    <text class="particle" x="140" y="210" style="animation-delay:1.1s">{ }</text>
+    <text class="particle" x="230" y="205" style="animation-delay:2.3s">01</text>
+    <text class="particle" x="760" y="200" style="animation-delay:0.6s">;</text>
+    <text class="particle" x="820" y="212" style="animation-delay:1.8s">&lt;/&gt;</text>
+    <text class="particle" x="690" y="208" style="animation-delay:3s">{ }</text>
+  </g>
+
+  <!-- coffee cup with rising steam -->
+  <g transform="translate(64,60)">
+    <g class="steam" stroke="#F1C36B" stroke-width="2.4" fill="none" stroke-linecap="round" style="animation-delay:0s">
+      <path d="M8 34 C 4 26, 12 22, 8 14"/>
+    </g>
+    <g class="steam" stroke="#F1C36B" stroke-width="2.4" fill="none" stroke-linecap="round" style="animation-delay:0.9s">
+      <path d="M20 34 C 16 26, 24 22, 20 14"/>
+    </g>
+    <g class="steam" stroke="#F1C36B" stroke-width="2.4" fill="none" stroke-linecap="round" style="animation-delay:1.8s">
+      <path d="M32 34 C 28 26, 36 22, 32 14"/>
+    </g>
+    <path d="M2 40 h34 l-4 26 a4 4 0 0 1 -4 4 h-18 a4 4 0 0 1 -4 -4 z" fill="#20160C" stroke="#E8A93A" stroke-width="2"/>
+    <path d="M36 46 q12 0 12 10 t-12 10" fill="none" stroke="#E8A93A" stroke-width="2.5"/>
+  </g>
+
+  <!-- name + role -->
+  <g class="fadeUp" style="animation-delay:0.15s" transform="translate(0,0)">
+    <text x="130" y="110" class="sans" font-size="46" font-weight="800" fill="url(#nameGrad)">VEDHARSHA V</text>
+  </g>
+
+  <g clip-path="url(#typeClip)">
+    <text x="130" y="150" class="mono" font-size="20" fill="#D9CBB8">Java Developer // Spring Boot // Full-Stack Engineer</text>
+  </g>
+  <rect class="cursor" x="130" y="132" width="10" height="22" fill="#E2711D">
+    <animate attributeName="x" from="130" to="560" dur="2.2s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/>
+  </rect>
+
+  <text x="130" y="182" class="mono fadeUp" style="animation-delay:2.6s" font-size="14" fill="#7C6A54">$ building things · one commit at a time ☕</text>
+</svg>
